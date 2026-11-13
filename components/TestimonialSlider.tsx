@@ -35,7 +35,6 @@ export function TestimonialSlider() {
         </div>
 
         <div className="relative px-2 text-center">
-          <div className="pointer-events-none absolute inset-0 -z-10 opacity-70 [background-image:radial-gradient(#d3d8cd_1.4px,transparent_1.4px)] [background-size:9px_9px] [mask-image:radial-gradient(ellipse_at_center,#000_30%,transparent_72%)]" aria-hidden="true" />
           <div className="flex items-center justify-center gap-3 sm:gap-4">
             <span className="h-px w-[48px] bg-[#4f9a28] sm:w-[80px]" />
             <span className="group grid size-[52px] sm:size-[64px] place-items-center rounded-full bg-[#e2f4cc] text-[#17650f] shadow-sm transition-all duration-300 hover:scale-110 hover:bg-[#17650f] hover:text-white xl:size-[78px]">

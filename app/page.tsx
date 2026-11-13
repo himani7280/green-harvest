@@ -39,10 +39,10 @@ export default function Home() {
           </div>
 
           <div className="mt-5 sm:mt-6 grid gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6 lg:grid-cols-[1fr_1fr] xl:mt-[60px] xl:grid-cols-[380px_328px_1fr] xl:gap-x-[17px]">
-            <div className="group relative aspect-[380/233] w-full overflow-hidden rounded-[14px] xl:self-start">
+            <div className="group relative aspect-[380/233] sm:aspect-[328/380] w-full overflow-hidden rounded-[14px] xl:aspect-[380/233] xl:self-start">
               <Photo src={IMG[about.farmerImage]} alt={about.farmerAlt} sizes="380px" className="group-hover:scale-105" />
             </div>
-            <ImageReveal from="bottom" delay={0.1} className="group relative aspect-[16/9] sm:aspect-[328/435] overflow-hidden rounded-[14px] sm:row-span-2 lg:row-span-1">
+            <ImageReveal from="bottom" delay={0.1} className="group relative aspect-[16/9] sm:aspect-[328/380] overflow-hidden rounded-[14px] xl:aspect-[328/435]">
               <Photo src={IMG[about.tractorImage]} alt={about.tractorAlt} sizes="328px" className="group-hover:scale-105" />
             </ImageReveal>
             <Reveal delay={0.2} className="sm:col-span-2 lg:col-span-2 xl:col-span-1 xl:ml-[16px]">
