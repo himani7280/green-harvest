@@ -1,0 +1,581 @@
+{
+  "GreenHarvest": {
+    "fonts": {
+      "googleFontsHref": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&display=swap",
+      "fontVars": {
+        "--font-body": "\"Product Sans\", DM Sans, system-ui, sans-serif",
+        "--font-heading": "\"Product Sans\", DM Sans, system-ui, sans-serif"
+      },
+      "heading": {
+        "family": "Product Sans",
+        "cdnUrl": "https://fonts.cdnfonts.com/css/google-sans",
+        "fallback": "DM Sans, system-ui, sans-serif"
+      },
+      "body": {
+        "family": "Product Sans",
+        "fallback": "DM Sans, system-ui, sans-serif"
+      },
+      "googleFonts": [
+        {
+          "family": "DM Sans",
+          "spec": "wght@400;500;700;800;900",
+          "weights": [
+            "400",
+            "500",
+            "700",
+            "800",
+            "900"
+          ]
+        }
+      ]
+    },
+    "templateComponents": {
+      "template-1": {
+        "shared": {
+          "Header": "GreenHarvestHeader1",
+          "Footer": "GreenHarvestFooter1"
+        },
+        "pages": {
+          "home": {
+            "components": [
+              {
+                "key": "Home",
+                "component": "GreenHarvestHome1"
+              },
+              {
+                "key": "About",
+                "component": "GreenHarvestAbout1"
+              },
+              {
+                "key": "Services",
+                "component": "GreenHarvestServices1"
+              },
+              {
+                "key": "WhyChooseUs",
+                "component": "GreenHarvestWhyChooseUs1"
+              },
+              {
+                "key": "Gallery",
+                "component": "GreenHarvestGallery1"
+              },
+              {
+                "key": "Testimonials",
+                "component": "GreenHarvestTestimonials1"
+              },
+              {
+                "key": "Faqs",
+                "component": "GreenHarvestFaqs1"
+              },
+              {
+                "key": "Contact",
+                "component": "GreenHarvestContact1"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sections": {
+      "SiteChrome": {
+        "variants": {
+          "GreenHarvestHeader1": {
+            "site": {
+              "titleDefault": "GreenHarvest Agriculture | Sustainable Farming Solutions",
+              "titleTemplate": "%s | GreenHarvest Agriculture",
+              "description": "GreenHarvest Agriculture delivers high-quality agricultural solutions through sustainable farming practices, modern technology and a passion for healthy living.",
+              "copyrightPrefix": "© 2026",
+              "copyrightSuffix": "All Rights Reserved. Powered by",
+              "poweredBy": "Lestow"
+            },
+            "brand": {
+              "name": "GreenHarvest Agriculture",
+              "footerName": "AgriFarm",
+              "phone": "+1 00000 00000",
+              "email": "info@xyz.com",
+              "address": "California, USA"
+            },
+            "navLinks": [
+              {
+                "label": "Home",
+                "href": "#home"
+              },
+              {
+                "label": "About Us",
+                "href": "#about"
+              },
+              {
+                "label": "Our Services",
+                "href": "#services"
+              },
+              {
+                "label": "Why Choose Us",
+                "href": "#why"
+              },
+              {
+                "label": "Our Mission & Vision",
+                "href": "#about"
+              },
+              {
+                "label": "Gallery",
+                "href": "#gallery"
+              },
+              {
+                "label": "Testimonials",
+                "href": "#testimonials"
+              },
+              {
+                "label": "FAQs",
+                "href": "#faqs"
+              }
+            ],
+            "navbar": {
+              "homeAriaLabel": "GreenHarvest Agriculture home",
+              "openMenuLabel": "Open menu",
+              "closeMenuLabel": "Close menu",
+              "cta": {
+                "label": "Contact Us",
+                "href": "#contact"
+              }
+            },
+            "cta": {
+              "label": "Contact Us",
+              "href": "#contact"
+            }
+          },
+          "GreenHarvestFooter1": {
+            "blurb": "Sustainable farming solutions, expert guidance and quality support to help farmers grow better and build a healthier tomorrow.",
+            "quickLinksTitle": "Quick Links",
+            "servicesTitle": "Our Services",
+            "contactTitle": "Get in Touch",
+            "socials": [
+              {
+                "key": "facebook",
+                "label": "Facebook",
+                "href": "https://www.facebook.com"
+              },
+              {
+                "key": "instagram",
+                "label": "Instagram",
+                "href": "https://www.instagram.com"
+              },
+              {
+                "key": "linkedin",
+                "label": "LinkedIn",
+                "href": "https://www.linkedin.com"
+              },
+              {
+                "key": "youtube",
+                "label": "YouTube",
+                "href": "https://www.youtube.com"
+              }
+            ],
+            "quickLinks": [
+              {
+                "label": "Home",
+                "href": "#home"
+              },
+              {
+                "label": "About Us",
+                "href": "#about"
+              },
+              {
+                "label": "Our Services",
+                "href": "#services"
+              },
+              {
+                "label": "Gallery",
+                "href": "#gallery"
+              },
+              {
+                "label": "Testimonials",
+                "href": "#testimonials"
+              },
+              {
+                "label": "FAQs",
+                "href": "#faqs"
+              },
+              {
+                "label": "Contact Us",
+                "href": "#contact"
+              }
+            ],
+            "services": [
+              "Crop Management",
+              "Soil Health & Testing",
+              "Irrigation Solutions",
+              "Farm Consultation",
+              "Organic Farming",
+              "Training & Support"
+            ]
+          }
+        }
+      },
+      "Media": {
+        "variants": {
+          "GreenHarvestImages1": {
+            "images": {
+              "logo": "/images/logo.webp",
+              "footerLogo": "/images/footer-logo.webp",
+              "footerField": "/images/footer-field.webp",
+              "aboutFarmer": "/images/about-farmer.webp",
+              "aboutTractor": "/images/about-tractor.webp",
+              "service1": "/images/service-1.webp",
+              "service2": "/images/service-2.webp",
+              "service3": "/images/service-3.webp",
+              "service4": "/images/service-4.webp",
+              "whyTomato": "/images/why-tomato.webp",
+              "whySpinach": "/images/why-spinach.webp",
+              "gallery1": "/images/gallery-1.webp",
+              "gallery2": "/images/gallery-2.webp",
+              "gallery3": "/images/gallery-3.webp",
+              "gallery4": "/images/gallery-4.webp",
+              "gallery5": "/images/gallery-5.webp",
+              "gallery6": "/images/gallery-6.webp",
+              "gallery7": "/images/gallery-7.webp",
+              "gallery8": "/images/gallery-8.webp",
+              "gallery9": "/images/gallery-9.webp",
+              "gallery10": "/images/gallery-10.webp",
+              "gallery11": "/images/gallery-11.webp",
+              "farmerLeft": "/images/farmer-left.webp",
+              "farmerRight": "/images/farmer-right.webp",
+              "heroBg": "/images/hero-bg.webp"
+            }
+          }
+        }
+      },
+      "Home": {
+        "variants": {
+          "GreenHarvestHome1": {
+            "metadata": {
+              "title": "GreenHarvest Agriculture | Sustainable Farming Solutions",
+              "description": "We are committed to delivering high-quality agricultural solutions through sustainable farming practices, modern technology and a passion for healthy living."
+            },
+            "hero": {
+              "eyebrow": "Welcome to GreenHarvest Agriculture",
+              "titleLine1": "Growing a Greener Future",
+              "titlePlain": "with",
+              "titleAccent": "Sustainable Farming",
+              "text": "We are committed to delivering high-quality agricultural solutions through sustainable farming practices, modern technology and a passion for healthy living.",
+              "image": "heroBg",
+              "imageAlt": "Tractor working in a green crop field at sunrise"
+            }
+          }
+        }
+      },
+      "About": {
+        "variants": {
+          "GreenHarvestAbout1": {
+            "eyebrow": "About Us",
+            "titleLine1": "Nurturing Crops Today for a",
+            "titleLine2": "Healthier, Greener Tomorrow",
+            "text": "We are dedicated to delivering high-quality agricultural solutions through sustainable farming practices, modern technology and a passion for healthy and productive crops.",
+            "farmerImage": "aboutFarmer",
+            "farmerAlt": "Smiling farmer holding a bundle of fresh crops",
+            "tractorImage": "aboutTractor",
+            "tractorAlt": "Tractor spraying a crop field at sunset",
+            "tabs": [
+              {
+                "key": "mission",
+                "label": "Our Mission",
+                "icon": "target",
+                "text": "To provide sustainable, innovative and farmer-centric agricultural solutions that improve productivity, protect natural resources and support the long-term growth of farming communities."
+              },
+              {
+                "key": "vision",
+                "label": "Our Vision",
+                "icon": "eye",
+                "text": "To be a trusted global partner in agriculture, leading the way toward a greener, more food-secure future where every farmer thrives and the land is nurtured for generations."
+              }
+            ]
+          }
+        }
+      },
+      "Services": {
+        "variants": {
+          "GreenHarvestServices1": {
+            "eyebrow": "Our Services",
+            "titleLine1": "Future-Ready Farming",
+            "titleLine2": "Solutions",
+            "text": "End-to-end agricultural services designed to improve productivity, ensure sustainability and support farmers at every stage.",
+            "moreLabel": "More Details",
+            "moreHref": "#contact",
+            "prevLabel": "Slide cards left",
+            "nextLabel": "Slide cards right",
+            "items": [
+              {
+                "icon": "sprout",
+                "title": "Crop Cultivation",
+                "text": "Scientifically planned cultivation for higher yield and better quality.",
+                "image": "service1"
+              },
+              {
+                "icon": "handSprout",
+                "title": "Soil & Crop Care",
+                "text": "Soil health management and nutrient solutions for strong, healthy crops.",
+                "image": "service2"
+              },
+              {
+                "icon": "tractor",
+                "title": "Farm Machinery Support",
+                "text": "Access to modern, efficient and reliable farm equipment for all your farming needs.",
+                "image": "service3"
+              },
+              {
+                "icon": "drop",
+                "title": "Irrigation Solutions",
+                "text": "Smart and water-efficient irrigation systems for every farm.",
+                "image": "service4"
+              },
+              {
+                "icon": "leaves",
+                "title": "Organic Farm Solutions",
+                "text": "Certified natural and chemical-free inputs for healthier, higher-value produce.",
+                "image": "service1"
+              },
+              {
+                "icon": "award",
+                "title": "Harvest & Cold Storage",
+                "text": "Modern temperature-controlled warehousing to safeguard crop freshness and market value.",
+                "image": "service3"
+              },
+              {
+                "icon": "target",
+                "title": "Precision Drone Care",
+                "text": "Advanced aerial crop health monitoring and precision spraying for optimal field yield.",
+                "image": "service2"
+              },
+              {
+                "icon": "sprout",
+                "title": "Quality Seeds Supply",
+                "text": "Certified high-germination hybrid and organic seeds tested for top agricultural performance.",
+                "image": "service4"
+              }
+            ]
+          }
+        }
+      },
+      "WhyChooseUs": {
+        "variants": {
+          "GreenHarvestWhyChooseUs1": {
+            "eyebrow": "Why Choose Us",
+            "titleLine1": "Rooted in Tradition,",
+            "titleLine2": "Growing for Tomorrow",
+            "text": "Delivering trusted, sustainable and result-driven agricultural solutions for better yields.",
+            "tomatoImage": "whyTomato",
+            "tomatoAlt": "Basket of fresh tomatoes among the vines",
+            "spinachImage": "whySpinach",
+            "spinachAlt": "Hands holding a basket of fresh spinach",
+            "badge": {
+              "value": 25,
+              "suffix": "+",
+              "label": "Years of Experience",
+              "line1": "Years of",
+              "line2": "Experience"
+            },
+            "items": [
+              {
+                "icon": "sprout",
+                "label": "Proven Experience"
+              },
+              {
+                "icon": "award",
+                "label": "Quality Products"
+              },
+              {
+                "icon": "leaves",
+                "label": "Sustainable Farming"
+              },
+              {
+                "icon": "users",
+                "label": "Expert Support"
+              }
+            ]
+          }
+        }
+      },
+      "Gallery": {
+        "variants": {
+          "GreenHarvestGallery1": {
+            "eyebrow": "Our Gallery",
+            "titlePlain": "Moments from Our",
+            "titleAccent": "Farming Journey",
+            "text": "A visual glimpse into our farms, practices, people and day-to-day activities.",
+            "items": [
+              {
+                "image": "gallery1",
+                "alt": "Sunset over crop rows"
+              },
+              {
+                "image": "gallery2",
+                "alt": "Red tractor in wheat field"
+              },
+              {
+                "image": "gallery3",
+                "alt": "Hands planting a seedling"
+              },
+              {
+                "image": "gallery4",
+                "alt": "Sprinklers irrigating a field"
+              },
+              {
+                "image": "gallery5",
+                "alt": "Farmer holding fresh crops"
+              },
+              {
+                "image": "gallery6",
+                "alt": "Ripe tomatoes on the vine"
+              },
+              {
+                "image": "gallery7",
+                "alt": "Wheat ears at sunset"
+              },
+              {
+                "image": "gallery8",
+                "alt": "Cows feeding in a barn"
+              },
+              {
+                "image": "gallery9",
+                "alt": "Drone spraying crops"
+              },
+              {
+                "image": "gallery10",
+                "alt": "Hands holding grain"
+              },
+              {
+                "image": "gallery11",
+                "alt": "Aerial view of fields"
+              }
+            ]
+          }
+        }
+      },
+      "Testimonials": {
+        "variants": {
+          "GreenHarvestTestimonials1": {
+            "eyebrow": "Testimonials",
+            "titlePlain": "What Our",
+            "titleAccent": "Farmers Say",
+            "text": "Real stories from farmers who trust our products and services.",
+            "leftImage": "farmerLeft",
+            "leftImageAlt": "Smiling farmer in a green field",
+            "rightImage": "farmerRight",
+            "rightImageAlt": "Farmer in a straw hat smiling",
+            "items": [
+              {
+                "quote": "The farming solutions and guidance we received have greatly improved our crop quality and yield. A truly reliable and farmer-friendly team.",
+                "name": "Ramesh Yadav",
+                "role": "Progressive Farmer"
+              },
+              {
+                "quote": "Their irrigation advice cut our water use by a third and the harvest has never looked better. Support is always just a call away.",
+                "name": "Suresh Patel",
+                "role": "Wheat Grower"
+              },
+              {
+                "quote": "From soil testing to machinery support, everything is handled with care. GreenHarvest feels like a partner, not a vendor.",
+                "name": "Harpreet Singh",
+                "role": "Organic Farmer"
+              }
+            ]
+          }
+        }
+      },
+      "Faqs": {
+        "variants": {
+          "GreenHarvestFaqs1": {
+            "eyebrow": "FAQs",
+            "titlePlain": "Frequently Asked",
+            "titleAccent": "Questions",
+            "text": "Find quick answers to common questions about our farming solutions and services.",
+            "items": [
+              {
+                "q": "What farming solutions do you offer?",
+                "a": "We provide end-to-end farming solutions including crop management, soil health improvement, irrigation support, and expert guidance for better yield and sustainability."
+              },
+              {
+                "q": "Do you support sustainable and eco-friendly farming?",
+                "a": "Yes. Sustainability is at the core of everything we do, from organic inputs and water-efficient irrigation to soil-friendly practices that protect the land for the long term."
+              },
+              {
+                "q": "Can small and medium farmers work with you?",
+                "a": "Absolutely. Our services are designed to scale, so farms of every size can access expert guidance, quality inputs and modern equipment."
+              },
+              {
+                "q": "Do you offer on-field consultation or training?",
+                "a": "Yes. Our agronomists visit your farm for consultations and run regular training programs on modern, sustainable farming techniques."
+              },
+              {
+                "q": "How can I get started with your services?",
+                "a": "Simply reach out through the contact form or call us. We will understand your needs and suggest a plan that suits your land and goals."
+              },
+              {
+                "q": "Do you help with crop planning and management?",
+                "a": "Yes. We help you plan crop cycles, choose the right varieties and manage inputs through the season for the best possible results."
+              },
+              {
+                "q": "Is there any ongoing support after the service?",
+                "a": "Yes. We stay connected after delivery with follow-up visits, seasonal advice and quick support whenever you need it."
+              }
+            ]
+          }
+        }
+      },
+      "Contact": {
+        "variants": {
+          "GreenHarvestContact1": {
+            "eyebrow": "Contact Us",
+            "titleLine1": "Get in Touch",
+            "titleLine2": "With Us",
+            "text": "Have a question or need support for your farming needs? We're here to help.",
+            "cards": [
+              {
+                "icon": "phone",
+                "title": "Call Us",
+                "value": "+1 00000 00000"
+              },
+              {
+                "icon": "mail",
+                "title": "Email Us",
+                "value": "info@xyz.com"
+              },
+              {
+                "icon": "pin",
+                "title": "Our Location",
+                "value": "California, USA"
+              }
+            ],
+            "form": {
+              "title": "Send Us a Message",
+              "submit": "Send Message",
+              "success": "Thank you! Your message has been received. We will get back to you shortly.",
+              "fields": {
+                "namePlaceholder": "Your Name",
+                "emailPlaceholder": "Your Email",
+                "phonePlaceholder": "Your Phone",
+                "servicePlaceholder": "Select Service",
+                "messagePlaceholder": "Your Message"
+              },
+              "services": [
+                "Crop Cultivation",
+                "Soil & Crop Care",
+                "Farm Machinery Support",
+                "Irrigation Solutions",
+                "Other"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "layout": {
+      "maxWidth": "1267px",
+      "container": "mx-auto max-w-[1267px] xl:w-[calc(1267*var(--u))] xl:max-w-none",
+      "section": "px-4 sm:px-6 xl:px-0 pt-7 sm:pt-9 md:pt-10 xl:pt-[40px]"
+    },
+    "typography": {
+      "heroTitle": "text-[clamp(1.25rem,4.6vw,2.6rem)] font-bold leading-[1.12] tracking-[-0.01em] xl:text-[length:calc(61*var(--u))] xl:leading-[calc(62*var(--u))]",
+      "h2": "font-bold tracking-[-0.01em]",
+      "p": "text-[14.5px] sm:text-[16px] leading-[1.55] sm:leading-[1.6]"
+    }
+  }
+}
