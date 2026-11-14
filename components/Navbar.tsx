@@ -28,15 +28,15 @@ export function Navbar() {
       <div className="relative mx-auto w-full max-w-[1267px] rounded-full bg-white shadow-[0_10px_30px_-12px_rgba(20,60,10,0.35)] xl:w-[calc(1267*var(--u))]">
         <div className="flex h-[56px] sm:h-[60px] items-center justify-between gap-4 px-4 sm:px-6 xl:h-[calc(68*var(--u))] xl:px-[calc(30*var(--u))]">
           <div className="flex items-center">
-            <a href="#home" aria-label={NAVBAR.homeAriaLabel} onClick={() => setOpen(false)} className="shrink-0">
+            <a href={NAVBAR.homeHref} aria-label={NAVBAR.homeAriaLabel} onClick={() => setOpen(false)} className="shrink-0">
               <Logo priority className="w-[140px] sm:w-[150px] xl:w-[calc(190*var(--u))]" />
             </a>
             <span className="hidden w-px bg-[#d4d9d0] xl:mx-[calc(20*var(--u))] xl:block xl:h-[calc(38*var(--u))]" aria-hidden="true" />
           </div>
 
-          <nav className="hidden items-center xl:flex xl:gap-[calc(22*var(--u))]" aria-label="Main">
+          <nav className="hidden items-center xl:flex xl:gap-[calc(22*var(--u))]" aria-label={NAVBAR.mainNavAriaLabel}>
             {NAV_LINKS.map((link) => {
-              const isActive = active === link.href && link.label !== "Our Mission & Vision";
+              const isActive = active === link.href && link.label !== NAVBAR.activeExcludeLabel;
               return (
                 <a key={link.label} href={link.href} className={`relative whitespace-nowrap py-2 text-[15.5px] font-bold tracking-[-0.01em] xl:text-[length:calc(15.2*var(--u))] transition-colors ${isActive ? "text-[#17650f]" : "text-[#161616] hover:text-[#17650f]"}`}>
                   {link.label}
@@ -64,7 +64,7 @@ export function Navbar() {
             open ? "pointer-events-auto scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0"
           }`}
         >
-          <nav aria-label="Mobile">
+          <nav aria-label={NAVBAR.mobileNavAriaLabel}>
             <ul className="flex flex-col">
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>

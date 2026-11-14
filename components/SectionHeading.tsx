@@ -1,5 +1,5 @@
 import { LeafIcon } from "@/lib/icons";
-import { HEADING_FONT } from "@/data/data";
+import { HEADING_FONT, typography } from "@/data/data";
 import { Reveal } from "./Motion";
 
 type EyebrowProps = { children: string; align?: "left" | "center"; lines?: "right" | "both" | "none"; className?: string };
@@ -49,8 +49,8 @@ export function SectionHeading({
   text,
   align = "center",
   accentBreak = false,
-  titleClass = "text-[1.75rem] leading-[1.15] sm:text-[2.2rem] xl:text-[41.6px] xl:leading-[1.15]",
-  textClass = "text-[14.5px] sm:text-[16px] leading-[1.6] text-[#2d2d2d] xl:text-[18px] xl:leading-[27px]",
+  titleClass = typography.h2,
+  textClass = typography.p,
 }: SectionHeadingProps) {
   const center = align === "center";
   return (
@@ -58,7 +58,7 @@ export function SectionHeading({
       <Eyebrow align={center ? "center" : "left"} lines={center ? "both" : "right"}>
         {eyebrow}
       </Eyebrow>
-      <h2 style={{ fontFamily: HEADING_FONT }} className={`mt-1 sm:mt-2 xl:mt-0 font-bold tracking-[-0.01em] ${titleClass}`}>
+      <h2 style={{ fontFamily: HEADING_FONT }} className={`mt-1 sm:mt-2 xl:mt-0 ${titleClass}`}>
         <Title first={first} accent={accent} accentBreak={accentBreak} />
       </h2>
       {text && <p className={`mt-1.5 sm:mt-2.5 xl:mt-[5px] ${center ? "mx-auto" : ""} ${textClass}`}>{text}</p>}

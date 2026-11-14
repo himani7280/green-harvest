@@ -51,7 +51,7 @@ export function Footer() {
         <div className="absolute inset-x-0 top-0 h-8 bg-[linear-gradient(180deg,#0a2f00_0%,transparent_100%)]" />
       </div>
 
-      <div className="mx-auto w-full max-w-[1267px] px-4 pt-7 pb-5 sm:px-6 sm:pt-9 sm:pb-6 xl:w-[calc(1267*var(--u))] xl:px-0 xl:pt-[35px] xl:pb-[22px]">
+      <div className="mx-auto w-full max-w-[1267px] px-4 pt-[clamp(26px,3.6vw,46px)] pb-[clamp(18px,2.4vw,30px)] sm:px-6 xl:w-[calc(1267*var(--u))] xl:px-0">
         <div className="grid gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-[1.2fr_0.9fr_1fr_1.1fr] xl:grid-cols-[28%_20.5%_24%_1fr] xl:gap-0">
           <div className="sm:col-span-2 lg:col-span-1 xl:pr-[30px]">
             <Logo footer className="w-[180px] sm:w-[205px] xl:w-[250px]" />
@@ -88,7 +88,7 @@ export function Footer() {
               <ul className="mt-2.5 space-y-[5px] sm:mt-3.5 sm:space-y-[7px] xl:mt-[14px]">
                 {FOOTER.services.map((service) => (
                   <li key={service}>
-                    <a href="#services" className="group inline-flex items-center gap-2 text-[14.5px] sm:gap-2.5 sm:text-[15.5px] transition hover:text-[#86c61a] xl:text-[17px]">
+                    <a href={FOOTER.servicesHref} className="group inline-flex items-center gap-2 text-[14.5px] sm:gap-2.5 sm:text-[15.5px] transition hover:text-[#86c61a] xl:text-[17px]">
                       <ChevronRightIcon size={16} strokeWidth={2.2} className="shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                       {service}
                     </a>
@@ -103,7 +103,7 @@ export function Footer() {
             <ul className="mt-2.5 space-y-[8px] sm:mt-3.5 sm:space-y-[10px] xl:mt-[14px]">
               <ContactRow icon="phone" href={phoneHref}>{BRAND.phone}</ContactRow>
               <ContactRow icon="mail" href={mailHref}>{BRAND.email}</ContactRow>
-              <ContactRow icon="pin">{HOME.contact.cards[2].value}</ContactRow>
+              <ContactRow icon="pin">{BRAND.address}</ContactRow>
             </ul>
           </div>
         </div>
@@ -112,11 +112,11 @@ export function Footer() {
           <div className="relative flex flex-col items-center justify-center gap-3 text-center text-[14px] sm:flex-row sm:text-[15px] font-medium text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] xl:text-[16.5px]">
             <p>
               {SITE.copyrightPrefix} {SITE.copyrightSuffix}{" "}
-              <span className="font-semibold text-[#86c61a]">{SITE.poweredBy || "Lestow"}</span>
+              <span className="font-semibold text-[#86c61a]">{SITE.poweredBy}</span>
             </p>
             <a
-              href="#home"
-              aria-label="Scroll to top"
+              href={FOOTER.scrollTopHref}
+              aria-label={FOOTER.scrollTopLabel}
               className="group inline-flex size-10 sm:absolute sm:right-0 sm:top-1/2 sm:-translate-y-1/2 sm:mt-1 items-center justify-center rounded-full border-2 border-[#86c61a] bg-[#17650f] text-white shadow-md transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-[calc(50%+3px)] hover:bg-[#86c61a] hover:text-[#0a2f00] active:scale-95"
             >
               <ChevronUpIcon size={20} strokeWidth={2.5} className="transition-transform duration-300 group-hover:-translate-y-0.5" />

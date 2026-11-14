@@ -3,9 +3,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { HOME } from "@/data/data";
-import { MountainFlagIcon, NamedIcon } from "@/lib/icons";
+import { NamedIcon } from "@/lib/icons";
 
-const { tabs } = HOME.about;
+const { tabs, tabsAriaLabel } = HOME.about;
 
 export function AboutTabs() {
   const [active, setActive] = useState(0);
@@ -13,7 +13,7 @@ export function AboutTabs() {
 
   return (
     <div>
-      <div className="flex gap-[10px]" role="tablist" aria-label="Mission and vision">
+      <div className="flex gap-[10px]" role="tablist" aria-label={tabsAriaLabel}>
         {tabs.map((item, i) => {
           const isActive = i === active;
           return (
@@ -43,7 +43,7 @@ export function AboutTabs() {
             className="group flex items-center gap-3.5 sm:gap-5 xl:gap-0"
           >
             <span className="grid size-[56px] sm:size-[72px] shrink-0 place-items-center rounded-full bg-[#d6efc0] text-[#2f7d1c] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#1e6b0f] group-hover:text-white xl:size-[92px]">
-              <MountainFlagIcon size={40} strokeWidth={1.5} className="transition-transform duration-300 group-hover:scale-110" />
+              <NamedIcon name={tab.icon} size={40} strokeWidth={1.6} className="transition-transform duration-300 group-hover:scale-110" />
             </span>
             <span className="mx-6 hidden h-[84px] w-px bg-[#b8c9a8] xl:block" aria-hidden="true" />
             <p className="text-[14.5px] sm:text-[15.5px] leading-[1.6] text-[#2d2d2d] xl:text-[17px] xl:leading-[26px]">{tab.text}</p>

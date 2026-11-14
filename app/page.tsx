@@ -8,22 +8,22 @@ import { Counter, Float, ImageReveal, Reveal, Stagger, StaggerItem } from "@/com
 import { Photo } from "@/components/Photo";
 import { Eyebrow, SectionHeading } from "@/components/SectionHeading";
 import { TestimonialSlider } from "@/components/TestimonialSlider";
-import { HOME, IMG, HEADING_FONT } from "@/data/data";
-import { LeafIcon, LeavesIcon, NamedIcon } from "@/lib/icons";
+import { HOME, IMG, HEADING_FONT, layout, typography } from "@/data/data";
+import { LeafIcon, NamedIcon } from "@/lib/icons";
 
 const { about, services, why, gallery, testimonials, faqs, contact } = HOME;
 
-const SPACING = "pt-7 sm:pt-9 md:pt-10 xl:pt-[40px]";
-const SECTION = `px-4 sm:px-6 xl:px-0 ${SPACING}`;
-const CONTAINER = "mx-auto w-full max-w-[1267px] xl:w-[calc(1267*var(--u))]";
-const H2 = " font-bold tracking-[-0.01em]";
+const SECTION = layout.section;
+const CONTAINER = layout.container;
+const H2 = ` ${typography.h2}`;
+const P = typography.p;
 
 export default function Home() {
   return (
     <>
       <HomeHero />
 
-      {/* ── About ── */}
+      {/* About */}
       <section id="about" className={SECTION}>
         <div className={CONTAINER}>
           <div className="flex flex-col gap-2.5 sm:gap-4 lg:flex-row lg:items-start lg:justify-between">
@@ -31,27 +31,27 @@ export default function Home() {
               <Eyebrow>{about.eyebrow}</Eyebrow>
             </Reveal>
             <Reveal delay={0.1} className="lg:text-right">
-              <h2 style={{ fontFamily: HEADING_FONT }} className={`${H2} text-[1.75rem] leading-[1.15] sm:text-[2.2rem] xl:text-[41.6px] xl:leading-[1.15]`}>
-                <span className="block sm:whitespace-nowrap text-[#4a2616]">{about.titleLine1}</span>
-                <span className="block sm:whitespace-nowrap text-[#17650f]">{about.titleLine2}</span>
+              <h2 style={{ fontFamily: HEADING_FONT }} className={H2}>
+                <span className="block text-[#4a2616]">{about.titleLine1}</span>
+                <span className="block text-[#17650f]">{about.titleLine2}</span>
               </h2>
             </Reveal>
           </div>
 
-          <div className="mt-5 sm:mt-6 grid gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6 lg:grid-cols-2 xl:mt-[36px] xl:grid-cols-[30%_26%_1fr] xl:gap-x-[17px] xl:items-stretch">
-            <div className="flex flex-col gap-3.5 sm:gap-4 sm:h-[340px] xl:h-[366px] xl:gap-[16px]">
-              <div className="group relative flex-1 h-[165px] sm:h-auto w-full overflow-hidden rounded-[14px]">
+          <div className="mt-4 sm:mt-6 grid gap-4 sm:grid-cols-2 sm:gap-5 md:gap-6 lg:grid-cols-2 xl:mt-[36px] xl:grid-cols-[30%_26%_1fr] xl:gap-x-[17px] xl:items-stretch">
+            <div className="flex flex-col gap-3 sm:gap-4 sm:h-[330px] xl:h-[366px] xl:gap-[16px]">
+              <div className="group relative flex-1 h-[155px] sm:h-auto w-full overflow-hidden rounded-[14px]">
                 <Photo src={IMG[about.farmerImage]} alt={about.farmerAlt} sizes="380px" className="group-hover:scale-105" />
               </div>
-              <ImageReveal from="left" delay={0.08} className="group relative flex-1 h-[165px] sm:h-auto w-full overflow-hidden rounded-[14px]">
+              <ImageReveal from="left" delay={0.08} className="group relative flex-1 h-[155px] sm:h-auto w-full overflow-hidden rounded-[14px]">
                 <Photo src={IMG[about.harvestImage]} alt={about.harvestAlt} sizes="380px" className="group-hover:scale-105" />
               </ImageReveal>
             </div>
-            <ImageReveal from="bottom" delay={0.1} className="group relative h-[240px] sm:h-[340px] xl:h-[366px] w-full overflow-hidden rounded-[14px]">
+            <ImageReveal from="bottom" delay={0.1} className="group relative h-[220px] sm:h-[330px] xl:h-[366px] w-full overflow-hidden rounded-[14px]">
               <Photo src={IMG[about.tractorImage]} alt={about.tractorAlt} sizes="328px" className="group-hover:scale-105" />
             </ImageReveal>
             <Reveal delay={0.2} className="flex flex-col justify-between min-w-0 sm:col-span-2 lg:col-span-2 xl:col-span-1 xl:h-[366px] xl:ml-[12px] xl:pt-[18px]">
-              <p className="text-[14.5px] leading-[1.6] sm:text-[16px] text-[#2d2d2d] xl:text-[18px] xl:leading-[27px]">{about.text}</p>
+              <p className={P}>{about.text}</p>
               <div className="mt-3.5 sm:mt-5 xl:mt-auto">
                 <AboutTabs />
               </div>
@@ -60,7 +60,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Services ── */}
+      {/* Services */}
       <section id="services" className={SECTION}>
         <div className={CONTAINER}>
           <ServicesCarousel services={services} />
@@ -68,9 +68,9 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section id="why" className={`${SECTION} pt-8 sm:pt-10 md:pt-12 xl:pt-[48px]`}>
+      <section id="why" className={SECTION}>
         <div className={`grid items-center gap-6 sm:gap-8 lg:grid-cols-[1fr_1fr] lg:gap-10 xl:grid-cols-[44%_1fr] xl:gap-x-[4.3%] ${CONTAINER}`}>
-          <div className="order-2 lg:order-1 relative mx-auto h-[clamp(290px,62vw,440px)] w-full max-w-[558px] xl:h-[490px] xl:max-w-none">
+          <div className="order-2 lg:order-1 relative mx-auto h-[clamp(270px,58vw,430px)] w-full max-w-[558px] xl:h-[490px] xl:max-w-none">
             <span
               className="absolute bottom-[7.5%] left-[12%] h-[14px] w-[34.5%] rounded-bl-[20px] bg-[linear-gradient(90deg,#7ac114,#e4f5c8)] sm:h-[16px] xl:bottom-[36px] xl:h-[18px]"
               aria-hidden="true"
@@ -113,22 +113,22 @@ export default function Home() {
           <div className="order-1 lg:order-2 min-w-0 xl:-mt-[5px]">
             <Reveal>
               <Eyebrow lines="both">{why.eyebrow}</Eyebrow>
-              <h2 style={{ fontFamily: HEADING_FONT }} className={`${H2} mt-2 sm:mt-3 text-[1.75rem] leading-[1.15] sm:text-[2.2rem] xl:mt-[14px] xl:text-[41.6px] xl:leading-[1.15]`}>
-                <span className="block sm:whitespace-nowrap text-[#4a2616]">{why.titleLine1}</span>
-                <span className="block sm:whitespace-nowrap text-[#17650f]">{why.titleLine2}</span>
+              <h2 style={{ fontFamily: HEADING_FONT }} className={`${H2} mt-2 sm:mt-3 xl:mt-[14px]`}>
+                <span className="block text-[#4a2616]">{why.titleLine1}</span>
+                <span className="block text-[#17650f]">{why.titleLine2}</span>
               </h2>
-              <p className="mt-3 sm:mt-4 max-w-[520px] text-[14.5px] sm:text-[16px] leading-[1.6] text-[#2d2d2d] xl:mt-[16px] xl:text-[18px] xl:leading-[27px]">{why.text}</p>
+              <p className={`mt-2.5 sm:mt-4 max-w-[520px] xl:mt-[16px] ${P}`}>{why.text}</p>
             </Reveal>
 
-            <Stagger className="mt-5 grid grid-cols-2 gap-4 sm:mt-7 sm:grid-cols-4 sm:gap-4 xl:mt-[38px] xl:gap-4">
+            <Stagger className="mt-4 grid grid-cols-2 gap-3.5 sm:mt-6 sm:grid-cols-4 sm:gap-4 xl:mt-[38px] xl:gap-4">
               {why.items.map((item) => {
                 const [firstWord, ...restWords] = item.label.split(" ");
                 return (
                   <StaggerItem key={item.label} className="group flex flex-col items-center text-center">
-                    <span className="grid h-[56px] w-[68px] sm:h-[64px] sm:w-[76px] xl:h-[70px] xl:w-[82px] place-items-center rounded-[14px] sm:rounded-[16px] bg-[#e3f5cd] text-[#17650f] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:bg-[#17650f] group-hover:text-white group-hover:shadow-md">
-                      <NamedIcon name={item.icon} size={34} strokeWidth={1.5} className="transition-transform duration-300 group-hover:scale-110" />
+                    <span className="grid h-[52px] w-[64px] sm:h-[62px] sm:w-[74px] xl:h-[70px] xl:w-[82px] place-items-center rounded-[14px] sm:rounded-[16px] bg-[#e3f5cd] text-[#17650f] transition-all duration-300 group-hover:-translate-y-1.5 group-hover:bg-[#17650f] group-hover:text-white group-hover:shadow-md">
+                      <NamedIcon name={item.icon} size={32} strokeWidth={1.5} className="transition-transform duration-300 group-hover:scale-110" />
                     </span>
-                    <p className="mt-2 sm:mt-3 text-[14.5px] sm:text-[15.5px] font-bold leading-[1.25] text-[#161616] xl:mt-[14px] xl:text-[17.5px] xl:leading-[22px]">
+                    <p className="mt-2 sm:mt-3 text-[clamp(13.5px,1.35vw,17.5px)] font-bold leading-[1.25] text-[#161616] xl:mt-[14px]">
                       <span className="block">{firstWord}</span>
                       {restWords.length > 0 && <span className="block">{restWords.join(" ")}</span>}
                     </p>
@@ -140,7 +140,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Gallery ── */}
+      {/* Gallery */}
       <section id="gallery" className={SECTION}>
         <div className={CONTAINER}>
           <SectionHeading
@@ -148,8 +148,6 @@ export default function Home() {
             first={gallery.titlePlain}
             accent={gallery.titleAccent}
             text={gallery.text}
-            titleClass="text-[1.75rem] leading-[1.15] sm:text-[2.2rem] xl:text-[41.6px] xl:leading-[1.15]"
-            textClass="text-[14.5px] sm:text-[16px] leading-[1.6] text-[#2d2d2d] xl:text-[18px] xl:leading-[27px]"
           />
           <div className="mt-5 sm:mt-6 xl:mt-[28px]">
             <GalleryGrid />
@@ -157,7 +155,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Testimonials ── */}
+      {/* Testimonials */}
       <section id="testimonials" className={SECTION}>
         <div className={CONTAINER}>
           <SectionHeading
@@ -165,8 +163,6 @@ export default function Home() {
             first={testimonials.titlePlain}
             accent={testimonials.titleAccent}
             text={testimonials.text}
-            titleClass="text-[1.75rem] leading-[1.15] sm:text-[2.2rem] xl:text-[41.6px] xl:leading-[1.15]"
-            textClass="text-[14.5px] sm:text-[16px] leading-[1.6] text-[#2d2d2d] xl:text-[18px] xl:leading-[27px]"
           />
           <div className="mt-5 sm:mt-6 xl:mt-[34px]">
             <TestimonialSlider />
@@ -174,7 +170,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FAQs ── */}
+      {/* FAQs */}
       <section id="faqs" className={SECTION}>
         <div className={CONTAINER}>
           <div className="mx-auto max-w-[949px]">
@@ -183,8 +179,6 @@ export default function Home() {
               first={faqs.titlePlain}
               accent={faqs.titleAccent}
               text={faqs.text}
-              titleClass="text-[1.75rem] leading-[1.15] sm:text-[2.2rem] xl:text-[41.6px] xl:leading-[1.15]"
-              textClass="text-[14.5px] sm:text-[16px] leading-[1.6] text-[#2d2d2d] xl:text-[18px] xl:leading-[27px]"
             />
             <Reveal delay={0.1} className="mt-5 sm:mt-6 xl:mt-[32px]">
               <FaqList />
@@ -193,16 +187,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Contact ── */}
-      <section id="contact" className={`${SECTION} pb-7 sm:pb-9 md:pb-10 xl:pb-[40px]`}>
+      {/* Contact */}
+      <section id="contact" className={`${SECTION} pb-[clamp(28px,4.2vw,56px)]`}>
         <div className={`grid gap-6 sm:gap-8 lg:grid-cols-[1fr_1fr] lg:gap-10 xl:grid-cols-[36.5%_1fr] xl:gap-x-0 ${CONTAINER}`}>
           <Reveal className="min-w-0 xl:pr-[40px]">
             <Eyebrow lines="both">{contact.eyebrow}</Eyebrow>
-            <h2 style={{ fontFamily: HEADING_FONT }} className={`${H2} mt-2 sm:mt-3 text-[1.75rem] leading-[1.15] sm:text-[2.2rem] xl:mt-[14px] xl:text-[41.6px] xl:leading-[1.15]`}>
+            <h2 style={{ fontFamily: HEADING_FONT }} className={`${H2} mt-2 sm:mt-3 xl:mt-[14px]`}>
               <span className="block text-[#5a3318]">{contact.titleLine1}</span>
               <span className="block text-[#17650f]">{contact.titleLine2}</span>
             </h2>
-            <p className="mt-3 sm:mt-4 max-w-[420px] text-[14.5px] sm:text-[16px] leading-[1.6] text-[#2d2d2d] xl:mt-[16px] xl:text-[18px] xl:leading-[27px]">{contact.text}</p>
+            <p className={`mt-2.5 sm:mt-4 max-w-[420px] xl:mt-[16px] ${P}`}>{contact.text}</p>
             <ul className="mt-4 space-y-3.5 sm:mt-6 sm:space-y-5 xl:mt-[30px] xl:space-y-[24px]">
               {contact.cards.map((card) => {
                 const href =

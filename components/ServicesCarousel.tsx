@@ -5,7 +5,7 @@ import { ServiceCard } from "./Cards";
 import { Eyebrow } from "./SectionHeading";
 import { Reveal } from "./Motion";
 import { ArrowLeftIcon, ArrowRightIcon, LeavesIcon } from "@/lib/icons";
-import { HEADING_FONT } from "@/data/data";
+import { HEADING_FONT, typography } from "@/data/data";
 
 type ServiceItem = {
   icon: string;
@@ -98,7 +98,7 @@ export function ServicesCarousel({ services }: { services: ServicesData }) {
       <div className="flex flex-col gap-3.5 sm:gap-5 lg:flex-row lg:items-center xl:items-end">
         <Reveal className="lg:w-[46%] lg:max-w-[574px] lg:shrink-0">
           <Eyebrow>{services.eyebrow}</Eyebrow>
-          <h2 style={{ fontFamily: HEADING_FONT }} className="mt-1.5 sm:mt-2 text-[1.75rem] font-bold tracking-[-0.01em] leading-[1.15] sm:text-[2.2rem] xl:text-[41.6px] xl:leading-[1.15]">
+          <h2 style={{ fontFamily: HEADING_FONT }} className={`mt-1.5 sm:mt-2 ${typography.h2}`}>
             <span className="block text-[#4a2616]">{services.titleLine1}</span>
             <span className="group relative inline-block text-[#17650f]">
               {services.titleLine2}
@@ -108,7 +108,7 @@ export function ServicesCarousel({ services }: { services: ServicesData }) {
         </Reveal>
         <Reveal delay={0.1} className="flex items-center gap-5 lg:flex-1">
           <span className="hidden h-[76px] w-px shrink-0 bg-[#b9c7ad] lg:block" aria-hidden="true" />
-          <p className="max-w-[400px] text-[14.5px] sm:text-[16px] leading-[1.6] text-[#2d2d2d] xl:text-[18px] xl:leading-[27px]">{services.text}</p>
+          <p className={`max-w-[400px] ${typography.p}`}>{services.text}</p>
         </Reveal>
         <Reveal delay={0.2} className="lg:ml-auto shrink-0">
           <div className="flex gap-3 sm:gap-[15px]">

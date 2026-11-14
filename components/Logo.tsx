@@ -20,7 +20,7 @@ export function Logo({ className = "w-[150px] xl:w-[218px]", priority = false, f
         </defs>
       </svg>
       <Image
-        src={IMG.footerLogo}
+        src={IMG.logo}
         alt={BRAND.name}
         width={290}
         height={75}

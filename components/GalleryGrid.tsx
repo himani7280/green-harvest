@@ -8,9 +8,9 @@ import { ArrowLeftIcon, ArrowRightIcon, CloseIcon } from "@/lib/icons";
 import { Photo } from "./Photo";
 import { Stagger, StaggerItem } from "./Motion";
 
-const { items } = HOME.gallery;
+const { items, lightbox } = HOME.gallery;
 
-/* Mosaic slots: [left, top, width, height] on a 1250x460 canvas */
+/* Desktop mosaic slots */
 const SLOTS = [
   [0, 0, 302, 160],
   [310, 0, 244, 160],
@@ -25,19 +25,19 @@ const SLOTS = [
   [651, 292, 156, 168],
 ] as const;
 
-/* Responsive Bento spans (< 1024px) — 100% aligned on both 2-col mobile and 3-col tablet */
+/* Mobile bento spans */
 const MOBILE_SPANS = [
-  "col-span-2 row-span-1 md:col-span-2 md:row-span-1", // 0: Wide banner
-  "col-span-1 row-span-1 md:col-span-1 md:row-span-1", // 1: Standard
-  "col-span-1 row-span-2 md:col-span-1 md:row-span-2", // 2: Tall portrait
-  "col-span-1 row-span-1 md:col-span-2 md:row-span-1", // 3: Standard on mobile, wide on tablet
-  "col-span-1 row-span-1 md:col-span-1 md:row-span-1", // 4: Standard
-  "col-span-1 row-span-1 md:col-span-1 md:row-span-1", // 5: Standard
-  "col-span-2 row-span-1 md:col-span-2 md:row-span-2", // 6: Wide middle feature on mobile, 2x2 hero feature on tablet
-  "col-span-1 row-span-2 md:col-span-1 md:row-span-1", // 7: Tall portrait on mobile, standard on tablet
-  "col-span-1 row-span-1 md:col-span-1 md:row-span-1", // 8: Standard
-  "col-span-1 row-span-1 md:col-span-1 md:row-span-1", // 9: Standard
-  "col-span-2 row-span-1 md:col-span-2 md:row-span-1", // 10: Wide bottom banner
+  "col-span-2 row-span-1 md:col-span-2 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 row-span-2 md:col-span-1 md:row-span-2",
+  "col-span-1 row-span-1 md:col-span-2 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-2 row-span-1 md:col-span-2 md:row-span-2",
+  "col-span-1 row-span-2 md:col-span-1 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-1 row-span-1 md:col-span-1 md:row-span-1",
+  "col-span-2 row-span-1 md:col-span-2 md:row-span-1",
 ] as const;
 
 const W = 1250;
@@ -83,7 +83,7 @@ export function GalleryGrid() {
 
   return (
     <div className="relative w-full">
-      {/* Responsive L-shaped notch clipPath for gallery-10 (hands holding wheat grain) */}
+      {/* Notch clipPath */}
       <svg className="pointer-events-none absolute size-0 overflow-hidden" aria-hidden="true" focusable="false">
         <defs>
           <clipPath id="gallery-wheat-notch" clipPathUnits="objectBoundingBox">
@@ -92,7 +92,7 @@ export function GalleryGrid() {
         </defs>
       </svg>
 
-      {/* Mobile & Tablet Bento Mosaic (< 1024px): Varied sizes in between, 100% aligned outer height & width */}
+      {/* Mobile & tablet grid */}
       <Stagger className="grid grid-flow-dense grid-cols-2 auto-rows-[155px] gap-3 sm:auto-rows-[190px] sm:gap-3.5 md:grid-cols-3 md:auto-rows-[205px] md:gap-4 lg:hidden">
         {items.map((item, i) => (
           <StaggerItem
@@ -105,7 +105,7 @@ export function GalleryGrid() {
                 setDirection(1);
                 setActiveIndex(i);
               }}
-              aria-label={`View ${item.alt}`}
+              aria-label={`${lightbox.viewPrefix} ${item.alt}`}
               className="relative block size-full cursor-pointer text-left focus:outline-none"
             >
               <Photo
@@ -120,7 +120,7 @@ export function GalleryGrid() {
         ))}
       </Stagger>
 
-      {/* Desktop Mosaic (>= 1024px): Original 11-slot aligned mosaic with curved notch */}
+      {/* Desktop mosaic */}
       <Stagger className="relative hidden w-full aspect-[1250/460] lg:block">
         {items.map((item, i) => {
           const [left, top, width, height] = SLOTS[i];
@@ -147,7 +147,7 @@ export function GalleryGrid() {
                   setDirection(1);
                   setActiveIndex(i);
                 }}
-                aria-label={`View ${item.alt}`}
+                aria-label={`${lightbox.viewPrefix} ${item.alt}`}
                 className="relative block size-full cursor-pointer text-left focus:outline-none"
               >
                 <Photo
@@ -163,7 +163,7 @@ export function GalleryGrid() {
         })}
       </Stagger>
 
-      {/* Lightbox Arrow Carousel Modal */}
+      {/* Lightbox modal */}
       <AnimatePresence>
         {activeIndex !== null && activeItem && (
           <motion.div
@@ -175,14 +175,12 @@ export function GalleryGrid() {
             className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/85 px-4 py-4 backdrop-blur-md sm:px-6"
             role="dialog"
             aria-modal="true"
-            aria-label="Gallery image carousel"
+            aria-label={lightbox.dialogAriaLabel}
           >
-            {/* Compact Lightbox Wrapper */}
             <div
               onClick={(e) => e.stopPropagation()}
               className="relative flex w-full max-w-[680px] flex-col items-center"
             >
-              {/* Main 3:2 slide viewport + Single Cross Button + Left/Right Arrow buttons */}
               <div
                 onTouchStart={(e) => {
                   touchStartX.current = e.touches[0].clientX;
@@ -196,27 +194,27 @@ export function GalleryGrid() {
                 }}
                 className="relative flex w-full items-center justify-center"
               >
-                {/* Single Cross (Close) Button at top-right */}
+                {/* Close button */}
                 <button
                   type="button"
                   onClick={closeLightbox}
-                  aria-label="Close gallery"
+                  aria-label={lightbox.closeLabel}
                   className="absolute right-3 top-3 z-30 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border-2 border-[#86c61a] bg-[#0a2f00]/90 text-white shadow-lg backdrop-blur-sm transition hover:bg-[#86c61a] hover:text-[#0a2f00] active:scale-95"
                 >
                   <CloseIcon size={20} />
                 </button>
 
-                {/* Left Arrow */}
+                {/* Prev arrow */}
                 <button
                   type="button"
                   onClick={showPrev}
-                  aria-label="Previous image"
+                  aria-label={lightbox.prevLabel}
                   className="group absolute left-3 z-20 grid size-10 sm:size-11 cursor-pointer place-items-center rounded-full border-[1.5px] border-[#86c61a] bg-[#0a2f00]/85 text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-[#17650f] hover:scale-105 active:scale-95"
                 >
                   <ArrowLeftIcon size={20} strokeWidth={2.2} className="transition-transform duration-300 group-hover:-translate-x-0.5" />
                 </button>
 
-                {/* Compact Uniform 3:2 Image Frame */}
+                {/* Image frame */}
                 <div className="relative aspect-[3/2] max-h-[68vh] w-full overflow-hidden rounded-[16px] sm:rounded-[20px] border border-white/25 bg-[#071d02] shadow-[0_24px_50px_-12px_rgba(0,0,0,0.75)]">
                   <AnimatePresence mode="wait" custom={direction}>
                     <motion.div
@@ -241,11 +239,11 @@ export function GalleryGrid() {
                   </AnimatePresence>
                 </div>
 
-                {/* Right Arrow */}
+                {/* Next arrow */}
                 <button
                   type="button"
                   onClick={showNext}
-                  aria-label="Next image"
+                  aria-label={lightbox.nextLabel}
                   className="group absolute right-3 z-20 grid size-10 sm:size-11 cursor-pointer place-items-center rounded-full border-[1.5px] border-[#86c61a] bg-[#0a2f00]/85 text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:bg-[#17650f] hover:scale-105 active:scale-95"
                 >
                   <ArrowRightIcon size={20} strokeWidth={2.2} className="transition-transform duration-300 group-hover:translate-x-0.5" />

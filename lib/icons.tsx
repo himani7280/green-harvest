@@ -22,14 +22,10 @@ export const SproutIcon = make(
 );
 export const HandSproutIcon = make(
   <>
-    {/* Twin leaf sprout on top */}
     <path d="M12 9C8.5 9 5.5 6 5.5 2.5C9 2.5 12 5.5 12 9Z" stroke="currentColor" strokeWidth={1.8} strokeLinejoin="round" fill="none" />
     <path d="M12 9C15.5 9 18.5 6 18.5 2.5C15 2.5 12 5.5 12 9Z" stroke="currentColor" strokeWidth={1.8} strokeLinejoin="round" fill="none" />
-    {/* Stem connecting to hand */}
     <path d="M12 9v5" stroke="currentColor" strokeWidth={2} strokeLinecap="round" />
-    {/* Sleeve cuff */}
     <rect x="2.5" y="14" width="2.5" height="6.5" rx="0.8" stroke="currentColor" strokeWidth={1.8} fill="none" />
-    {/* Hand holding the sprout */}
     <path d="M5 16.5h5.5l3-2h4.5a1.8 1.8 0 0 1 1.8 1.8c0 .5-.2 1-.6 1.4L15.5 20.5H7.5l-2.5-1.5" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </>
 );

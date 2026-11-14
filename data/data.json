@@ -2,6 +2,8 @@
   "GreenHarvest": {
     "fonts": {
       "googleFontsHref": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800;900&display=swap",
+      "preconnectHref": "https://fonts.googleapis.com",
+      "preconnectStaticHref": "https://fonts.gstatic.com",
       "fontVars": {
         "--font-body": "\"Product Sans\", DM Sans, system-ui, sans-serif",
         "--font-heading": "\"Product Sans\", DM Sans, system-ui, sans-serif"
@@ -129,7 +131,11 @@
               }
             ],
             "navbar": {
+              "homeHref": "#home",
               "homeAriaLabel": "AgriFarm home",
+              "mainNavAriaLabel": "Main",
+              "mobileNavAriaLabel": "Mobile",
+              "activeExcludeLabel": "Our Mission & Vision",
               "openMenuLabel": "Open menu",
               "closeMenuLabel": "Close menu",
               "cta": {
@@ -146,7 +152,10 @@
             "blurb": "Sustainable farming solutions, expert guidance and quality support to help farmers grow better and build a healthier tomorrow.",
             "quickLinksTitle": "Quick Links",
             "servicesTitle": "Our Services",
+            "servicesHref": "#services",
             "contactTitle": "Get in Touch",
+            "scrollTopHref": "#home",
+            "scrollTopLabel": "Scroll to top",
             "socials": [
               {
                 "key": "facebook",
@@ -276,6 +285,7 @@
             "harvestAlt": "Hands nurturing a young green crop seedling in rich soil",
             "tractorImage": "aboutTractor",
             "tractorAlt": "Tractor spraying a crop field at sunset",
+            "tabsAriaLabel": "Mission and vision",
             "tabs": [
               {
                 "key": "mission",
@@ -403,6 +413,13 @@
             "titlePlain": "Moments from Our",
             "titleAccent": "Farming Journey",
             "text": "A visual glimpse into our farms, practices, people and day-to-day activities.",
+            "lightbox": {
+              "dialogAriaLabel": "Gallery image carousel",
+              "viewPrefix": "View",
+              "closeLabel": "Close gallery",
+              "prevLabel": "Previous image",
+              "nextLabel": "Next image"
+            },
             "items": [
               {
                 "image": "gallery1",
@@ -572,13 +589,20 @@
     },
     "layout": {
       "maxWidth": "1267px",
-      "container": "mx-auto max-w-[1267px] xl:w-[calc(1267*var(--u))] xl:max-w-none",
-      "section": "px-4 sm:px-6 xl:px-0 pt-7 sm:pt-9 md:pt-10 xl:pt-[40px]"
+      "container": "mx-auto w-full max-w-[1267px] xl:w-[calc(1267*var(--u))]",
+      "section": "px-4 sm:px-6 xl:px-0 pt-[clamp(26px,3.8vw,52px)] pb-[clamp(8px,1.2vw,16px)]",
+      "htmlLang": "en",
+      "htmlClass": "h-full scroll-smooth scroll-pt-[110px] antialiased",
+      "bodyClass": "flex min-h-full flex-col overflow-x-hidden bg-white text-[15px] leading-[1.6] text-[#1c1c1c] [text-rendering:optimizeLegibility] selection:bg-[#17650f] selection:text-white [&_:focus-visible]:rounded-md [&_:focus-visible]:outline-2 [&_:focus-visible]:outline-offset-2 [&_:focus-visible]:outline-[#17650f]",
+      "bodyStyle": {
+        "fontFamily": "\"Product Sans\", DM Sans, system-ui, sans-serif",
+        "--u": "min(1px, calc(100vw / 1351))"
+      }
     },
     "typography": {
       "heroTitle": "text-[clamp(1.25rem,4.6vw,2.6rem)] font-bold leading-[1.12] tracking-[-0.01em] xl:text-[length:calc(61*var(--u))] xl:leading-[calc(62*var(--u))]",
-      "h2": "font-bold tracking-[-0.01em]",
-      "p": "text-[14.5px] sm:text-[16px] leading-[1.55] sm:leading-[1.6]"
+      "h2": "font-bold tracking-[-0.01em] text-[clamp(1.3rem,3.6vw,2.6rem)] leading-[1.15] xl:text-[length:calc(41.6*var(--u))] xl:leading-[1.15]",
+      "p": "text-[clamp(13.5px,1.4vw,18px)] leading-[1.6] text-[#2d2d2d]"
     }
   }
 }
