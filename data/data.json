@@ -80,15 +80,15 @@
         "variants": {
           "GreenHarvestHeader1": {
             "site": {
-              "titleDefault": "GreenHarvest Agriculture | Sustainable Farming Solutions",
-              "titleTemplate": "%s | GreenHarvest Agriculture",
-              "description": "GreenHarvest Agriculture delivers high-quality agricultural solutions through sustainable farming practices, modern technology and a passion for healthy living.",
-              "copyrightPrefix": "© 2026",
-              "copyrightSuffix": "All Rights Reserved. Powered by",
+              "titleDefault": "AgriFarm | Sustainable Farming Solutions",
+              "titleTemplate": "%s | AgriFarm",
+              "description": "AgriFarm delivers high-quality agricultural solutions through sustainable farming practices, modern technology and a passion for healthy living.",
+              "copyrightPrefix": "Copyright © 2026.",
+              "copyrightSuffix": "All rights reserved. Powered by",
               "poweredBy": "Lestow"
             },
             "brand": {
-              "name": "GreenHarvest Agriculture",
+              "name": "AgriFarm",
               "footerName": "AgriFarm",
               "phone": "+1 00000 00000",
               "email": "info@xyz.com",
@@ -129,7 +129,7 @@
               }
             ],
             "navbar": {
-              "homeAriaLabel": "GreenHarvest Agriculture home",
+              "homeAriaLabel": "AgriFarm home",
               "openMenuLabel": "Open menu",
               "closeMenuLabel": "Close menu",
               "cta": {
@@ -214,10 +214,11 @@
         "variants": {
           "GreenHarvestImages1": {
             "images": {
-              "logo": "/images/logo.webp",
+              "logo": "/images/footer-logo.webp",
               "footerLogo": "/images/footer-logo.webp",
               "footerField": "/images/footer-field.webp",
               "aboutFarmer": "/images/about-farmer.webp",
+              "aboutHarvest": "/images/about-harvest.webp",
               "aboutTractor": "/images/about-tractor.webp",
               "service1": "/images/service-1.webp",
               "service2": "/images/service-2.webp",
@@ -247,11 +248,11 @@
         "variants": {
           "GreenHarvestHome1": {
             "metadata": {
-              "title": "GreenHarvest Agriculture | Sustainable Farming Solutions",
+              "title": "AgriFarm | Sustainable Farming Solutions",
               "description": "We are committed to delivering high-quality agricultural solutions through sustainable farming practices, modern technology and a passion for healthy living."
             },
             "hero": {
-              "eyebrow": "Welcome to GreenHarvest Agriculture",
+              "eyebrow": "Welcome to AgriFarm",
               "titleLine1": "Growing a Greener Future",
               "titlePlain": "with",
               "titleAccent": "Sustainable Farming",
@@ -271,6 +272,8 @@
             "text": "We are dedicated to delivering high-quality agricultural solutions through sustainable farming practices, modern technology and a passion for healthy and productive crops.",
             "farmerImage": "aboutFarmer",
             "farmerAlt": "Smiling farmer holding a bundle of fresh crops",
+            "harvestImage": "aboutHarvest",
+            "harvestAlt": "Hands nurturing a young green crop seedling in rich soil",
             "tractorImage": "aboutTractor",
             "tractorAlt": "Tractor spraying a crop field at sunset",
             "tabs": [
@@ -472,7 +475,7 @@
                 "role": "Wheat Grower"
               },
               {
-                "quote": "From soil testing to machinery support, everything is handled with care. GreenHarvest feels like a partner, not a vendor.",
+                "quote": "From soil testing to machinery support, everything is handled with care. AgriFarm feels like a partner, not a vendor.",
                 "name": "Harpreet Singh",
                 "role": "Organic Farmer"
               }

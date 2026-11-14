@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: SITE.description,
 };
 
-const bodyStyle = { fontFamily: BODY_FONT, "--u": "calc(100vw / 1351)" } as CSSProperties;
+const bodyStyle = { fontFamily: BODY_FONT, "--u": "min(1px, calc(100vw / 1351))" } as CSSProperties;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

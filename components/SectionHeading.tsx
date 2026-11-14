@@ -7,11 +7,11 @@ type EyebrowProps = { children: string; align?: "left" | "center"; lines?: "righ
 /* Eyebrow label */
 export function Eyebrow({ children, align = "left", lines = "right", className = "" }: EyebrowProps) {
   return (
-    <p className={`group inline-flex items-center gap-2 sm:gap-3 whitespace-nowrap text-[13.5px] sm:text-[15px] font-bold uppercase tracking-[0.02em] text-[#17650f] xl:text-[19.8px] ${align === "center" ? "justify-center" : ""} ${className}`}>
-      {lines === "both" && <span className="h-px w-6 sm:w-8 bg-[#4f9a28] xl:w-[80px]" aria-hidden="true" />}
-      <LeafIcon size={32} className={`size-6 sm:size-8 shrink-0 text-[#2f8a1e] transition-transform duration-300 group-hover:scale-115 group-hover:rotate-12 ${lines === "both" ? "xl:size-[52px]" : "xl:size-[46px]"}`} />
-      {children}
-      {lines !== "none" && <span className={`h-px w-6 sm:w-8 bg-[#4f9a28] ${lines === "both" ? "xl:w-[80px]" : "xl:w-[110px]"}`} aria-hidden="true" />}
+    <p className={`group inline-flex max-w-full items-center gap-2 sm:gap-3 whitespace-nowrap text-[13.5px] sm:text-[15px] font-bold uppercase tracking-[0.02em] text-[#17650f] xl:text-[18px] ${align === "center" ? "justify-center" : ""} ${className}`}>
+      {lines === "both" && <span className="h-px w-5 sm:w-8 shrink bg-[#4f9a28] xl:w-[70px]" aria-hidden="true" />}
+      <LeafIcon size={32} className={`size-6 sm:size-8 shrink-0 text-[#2f8a1e] transition-transform duration-300 group-hover:scale-115 group-hover:rotate-12 ${lines === "both" ? "xl:size-[48px]" : "xl:size-[44px]"}`} />
+      <span className="truncate">{children}</span>
+      {lines !== "none" && <span className={`h-px w-5 sm:w-8 shrink bg-[#4f9a28] ${lines === "both" ? "xl:w-[70px]" : "xl:w-[95px]"}`} aria-hidden="true" />}
     </p>
   );
 }
@@ -49,8 +49,8 @@ export function SectionHeading({
   text,
   align = "center",
   accentBreak = false,
-  titleClass = "text-[2rem] leading-[1.15] sm:text-[2.6rem] xl:text-[53px] xl:leading-[56px]",
-  textClass = "text-base text-[#2d2d2d] xl:text-[20px] xl:leading-[27px]",
+  titleClass = "text-[1.75rem] leading-[1.15] sm:text-[2.2rem] xl:text-[41.6px] xl:leading-[1.15]",
+  textClass = "text-[14.5px] sm:text-[16px] leading-[1.6] text-[#2d2d2d] xl:text-[18px] xl:leading-[27px]",
 }: SectionHeadingProps) {
   const center = align === "center";
   return (

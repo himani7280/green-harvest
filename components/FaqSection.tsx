@@ -21,18 +21,18 @@ export function FaqList() {
                 aria-expanded={isOpen}
                 aria-controls={`faq-${i}`}
                 onClick={() => setOpen(isOpen ? -1 : i)}
-                className={`group flex w-full items-center gap-3 sm:gap-4 text-left font-bold transition-colors ${isOpen ? "min-h-[48px] sm:min-h-[58px] bg-[linear-gradient(90deg,#3b8a14,#1a5a08)] px-4 sm:px-6 text-[15.5px] sm:text-[18px] text-white xl:min-h-[70px] xl:px-[38px] xl:text-[28px]" : "min-h-[50px] sm:min-h-[62px] px-3.5 sm:px-4 text-[15px] sm:text-[16px] text-[#111] xl:min-h-[74px] xl:pl-[34px] xl:pr-[40px] xl:text-[28px]"}`}
+                className={`group flex w-full items-center gap-3 sm:gap-4 text-left font-bold transition-colors ${isOpen ? "min-h-[48px] sm:min-h-[56px] bg-[linear-gradient(90deg,#3b8a14,#1a5a08)] px-4 sm:px-6 text-[15px] sm:text-[17px] text-white xl:min-h-[62px] xl:px-[32px] xl:text-[20px]" : "min-h-[50px] sm:min-h-[58px] px-3.5 sm:px-5 text-[15px] sm:text-[17px] text-[#111] xl:min-h-[64px] xl:pl-[28px] xl:pr-[34px] xl:text-[20px]"}`}
               >
                 {!isOpen && (
-                  <span className="grid size-[30px] sm:size-[36px] shrink-0 place-items-center rounded-full bg-[radial-gradient(circle_at_30%_30%,#9be13a,#5a9e12)] text-[17px] sm:text-[20px] font-extrabold text-white transition-transform duration-300 group-hover:scale-110 xl:size-[48px] xl:text-[28px]">?</span>
+                  <span className="grid size-[30px] sm:size-[36px] shrink-0 place-items-center rounded-full bg-[radial-gradient(circle_at_30%_30%,#9be13a,#5a9e12)] text-[16px] sm:text-[18px] font-extrabold text-white transition-transform duration-300 group-hover:scale-110 xl:size-[40px] xl:text-[22px]">?</span>
                 )}
                 <span className="flex-1">{item.q}</span>
-                {isOpen ? <ChevronUpIcon size={24} strokeWidth={2.4} className="shrink-0 transition-transform duration-300 group-hover:scale-115 xl:size-[28px]" /> : <ChevronDownIcon size={24} strokeWidth={2.4} className="shrink-0 text-[#17650f] transition-transform duration-300 group-hover:scale-115 xl:size-[28px]" />}
+                {isOpen ? <ChevronUpIcon size={22} strokeWidth={2.4} className="shrink-0 transition-transform duration-300 group-hover:scale-115 xl:size-[24px]" /> : <ChevronDownIcon size={22} strokeWidth={2.4} className="shrink-0 text-[#17650f] transition-transform duration-300 group-hover:scale-115 xl:size-[24px]" />}
               </button>
             </h3>
             <div id={`faq-${i}`} role="region" className={`grid bg-[linear-gradient(180deg,#e9f4d9,#f1f8e6)] transition-[grid-template-rows] duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
-              <p className="min-h-0 overflow-hidden px-4 sm:px-6 text-[14px] sm:text-[15px] leading-[1.55] sm:leading-[1.6] text-[#1c1c1c] xl:px-[46px] xl:text-[23px] xl:leading-[31px]">
-                <span className="block py-3 sm:py-4 xl:py-[18px]">{item.a}</span>
+              <p className="min-h-0 overflow-hidden px-4 sm:px-6 text-[14.5px] sm:text-[15.5px] leading-[1.6] text-[#2d2d2d] xl:px-[36px] xl:text-[17px] xl:leading-[26px]">
+                <span className="block py-3 sm:py-4 xl:py-[16px]">{item.a}</span>
               </p>
             </div>
           </li>

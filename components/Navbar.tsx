@@ -5,7 +5,7 @@ import { NAVBAR, NAV_CTA, NAV_LINKS } from "@/data/data";
 import { ArrowRightIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/lib/icons";
 import { Logo } from "./Logo";
 
-const unit = { "--u": "calc(100vw / 1351)" } as CSSProperties;
+const unit = { "--u": "min(1px, calc(100vw / 1351))" } as CSSProperties;
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -25,7 +25,7 @@ export function Navbar() {
 
   return (
     <header style={unit} className="fixed inset-x-0 top-3 z-50 px-3 sm:px-4 xl:top-[calc(22*var(--u))] xl:px-0">
-      <div className="relative mx-auto max-w-[1267px] rounded-full bg-white shadow-[0_10px_30px_-12px_rgba(20,60,10,0.35)] xl:w-[calc(1267*var(--u))] xl:max-w-none">
+      <div className="relative mx-auto w-full max-w-[1267px] rounded-full bg-white shadow-[0_10px_30px_-12px_rgba(20,60,10,0.35)] xl:w-[calc(1267*var(--u))]">
         <div className="flex h-[56px] sm:h-[60px] items-center justify-between gap-4 px-4 sm:px-6 xl:h-[calc(68*var(--u))] xl:px-[calc(30*var(--u))]">
           <div className="flex items-center">
             <a href="#home" aria-label={NAVBAR.homeAriaLabel} onClick={() => setOpen(false)} className="shrink-0">

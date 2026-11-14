@@ -96,21 +96,21 @@ export function ServicesCarousel({ services }: { services: ServicesData }) {
   return (
     <div>
       <div className="flex flex-col gap-3.5 sm:gap-5 lg:flex-row lg:items-center xl:items-end">
-        <Reveal className="lg:w-[574px] lg:shrink-0">
+        <Reveal className="lg:w-[46%] lg:max-w-[574px] lg:shrink-0">
           <Eyebrow>{services.eyebrow}</Eyebrow>
-          <h2 style={{ fontFamily: HEADING_FONT }} className="mt-1.5 sm:mt-2 text-[1.75rem] font-bold tracking-[-0.01em] leading-[1.1] sm:text-[2.4rem] md:text-[2.6rem] xl:text-[51px] xl:leading-[52px]">
+          <h2 style={{ fontFamily: HEADING_FONT }} className="mt-1.5 sm:mt-2 text-[1.75rem] font-bold tracking-[-0.01em] leading-[1.15] sm:text-[2.2rem] xl:text-[41.6px] xl:leading-[1.15]">
             <span className="block text-[#4a2616]">{services.titleLine1}</span>
             <span className="group relative inline-block text-[#17650f]">
               {services.titleLine2}
-              <LeavesIcon size={64} strokeWidth={1.2} className="absolute -right-[84px] top-1 hidden text-[#2f8a1e] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 sm:block" />
+              <LeavesIcon size={64} strokeWidth={1.2} className="absolute -right-[74px] top-1 hidden text-[#2f8a1e] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 xl:block" />
             </span>
           </h2>
         </Reveal>
-        <Reveal delay={0.1} className="flex items-center gap-6 lg:flex-1">
-          <span className="hidden h-[76px] w-px bg-[#b9c7ad] lg:block" aria-hidden="true" />
-          <p className="max-w-[400px] text-[14.5px] sm:text-[15px] leading-[1.55] sm:leading-[1.6] text-[#1c1c1c] xl:text-[18.7px] xl:leading-[26px]">{services.text}</p>
+        <Reveal delay={0.1} className="flex items-center gap-5 lg:flex-1">
+          <span className="hidden h-[76px] w-px shrink-0 bg-[#b9c7ad] lg:block" aria-hidden="true" />
+          <p className="max-w-[400px] text-[14.5px] sm:text-[16px] leading-[1.6] text-[#2d2d2d] xl:text-[18px] xl:leading-[27px]">{services.text}</p>
         </Reveal>
-        <Reveal delay={0.2} className="lg:ml-auto xl:mr-[19px]">
+        <Reveal delay={0.2} className="lg:ml-auto shrink-0">
           <div className="flex gap-3 sm:gap-[15px]">
             <button
               type="button"
@@ -134,7 +134,7 @@ export function ServicesCarousel({ services }: { services: ServicesData }) {
 
       {/* Carousel track */}
       <div
-        className="mt-5 -mx-4 overflow-hidden px-4 pt-2 pb-3 sm:mt-6 sm:pt-3 sm:pb-4 xl:mt-[38px] xl:pt-5 xl:pb-4"
+        className="mt-5 overflow-hidden pt-2 pb-3 sm:mt-6 sm:pt-3 sm:pb-4 xl:mt-[38px] xl:pt-5 xl:pb-4"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >

@@ -99,7 +99,7 @@ export function ZoomIn({ children, className }: { children: ReactNode; className
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 140, damping: 24, mass: 0.3 });
-  return <motion.div aria-hidden="true" style={{ scaleX }} className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-[linear-gradient(90deg,#86213f,#d9467a)]" />;
+  return <motion.div aria-hidden="true" style={{ scaleX }} className="fixed inset-x-0 top-0 z-[60] h-[3.5px] origin-left bg-[linear-gradient(90deg,#17650f,#86c61a)]" />;
 }
 
 /* Floating animation */

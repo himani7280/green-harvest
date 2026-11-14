@@ -21,8 +21,8 @@ export function TestimonialSlider() {
   const item = items[index];
 
   return (
-    <div className="relative mx-auto max-w-[1267px] xl:w-[calc(1267*var(--u))] xl:max-w-none" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-      <div className="relative grid items-center gap-6 pb-0 pt-0 lg:grid-cols-[259px_1fr_259px] xl:pb-2 xl:pt-[17px] xl:px-[13px]">
+    <div className="relative w-full" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+      <div className="relative grid items-center gap-6 pb-0 pt-3.5 lg:grid-cols-[259px_1fr_259px] lg:px-3.5 xl:pb-2 xl:pt-[17px] xl:px-[14px]">
         {/* Left image */}
         <div className="relative mx-auto hidden lg:block">
           <div
@@ -43,18 +43,18 @@ export function TestimonialSlider() {
             <span className="h-px w-[48px] bg-[#4f9a28] sm:w-[80px]" />
           </div>
 
-          <div className="relative mt-4 min-h-0 sm:mt-5 xl:mt-[22px] xl:min-h-[260px]">
+          <div className="relative mt-4 min-h-0 sm:mt-5 xl:mt-[22px] xl:min-h-[240px]">
             <AnimatePresence mode="wait">
               <motion.div key={item.name} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -14 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-                <blockquote className="mx-auto max-w-[640px] text-[15.5px] sm:text-[18px] font-medium leading-[1.45] sm:leading-[1.5] text-[#1c1c1c] xl:text-[28px] xl:leading-[38px]">&ldquo;{item.quote}&rdquo;</blockquote>
-                <div className="mt-4 sm:mt-6 flex items-center justify-center gap-3 sm:gap-4 xl:mt-[26px]">
+                <blockquote className="mx-auto max-w-[640px] text-[15px] sm:text-[17.5px] font-medium leading-[1.55] text-[#1c1c1c] xl:text-[21px] xl:leading-[32px]">&ldquo;{item.quote}&rdquo;</blockquote>
+                <div className="mt-4 sm:mt-6 flex items-center justify-center gap-3 sm:gap-4 xl:mt-[24px]">
                   <span className="hidden h-px w-[80px] bg-[#4f9a28] sm:block" />
-                  <span className="group grid size-[46px] sm:size-[56px] place-items-center rounded-full border-2 border-[#17650f] bg-white text-[#2f8a1e] transition-all duration-300 hover:scale-110 hover:bg-[#17650f] hover:text-white xl:size-[63px]">
-                    <LeafIcon size={34} className="size-7 sm:size-8 transition-transform duration-300 group-hover:scale-110 xl:size-[34px]" />
+                  <span className="group grid size-[46px] sm:size-[54px] place-items-center rounded-full border-2 border-[#17650f] bg-white text-[#2f8a1e] transition-all duration-300 hover:scale-110 hover:bg-[#17650f] hover:text-white xl:size-[58px]">
+                    <LeafIcon size={32} className="size-7 sm:size-8 transition-transform duration-300 group-hover:scale-110 xl:size-[32px]" />
                   </span>
                   <span className="text-left">
-                    <span style={{ fontFamily: HEADING_FONT }} className="block text-[18px] sm:text-[20px] font-bold leading-tight text-[#17650f] xl:text-[24.5px]">{item.name}</span>
-                    <span className="block text-[14.5px] sm:text-[16px] text-[#2a2a2a] xl:text-[20px]">{item.role}</span>
+                    <span style={{ fontFamily: HEADING_FONT }} className="block text-[17px] sm:text-[19px] font-bold leading-tight text-[#17650f] xl:text-[21px]">{item.name}</span>
+                    <span className="block text-[14px] sm:text-[15.5px] text-[#2a2a2a] xl:text-[17px]">{item.role}</span>
                   </span>
                   <span className="hidden h-px w-[80px] bg-[#4f9a28] sm:block" />
                 </div>

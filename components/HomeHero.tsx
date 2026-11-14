@@ -6,19 +6,19 @@ import { Reveal, WordReveal, ZoomIn } from "./Motion";
 
 const { hero } = HOME;
 
-const unit = { "--u": "calc(100vw / 1351)" } as CSSProperties;
+const unit = { "--u": "min(1px, calc(100vw / 1351))" } as CSSProperties;
 
 export function HomeHero() {
   return (
-    <section id="home" style={unit} className="relative isolate h-[clamp(290px,60vw,610px)] xl:h-screen xl:min-h-[640px] overflow-hidden bg-[#fed8a8]">
+    <section id="home" style={unit} className="relative isolate h-[clamp(290px,60vw,610px)] xl:h-screen xl:min-h-[640px] xl:max-h-[820px] overflow-hidden bg-[#fed8a8]">
       {/* Hero background */}
       <ZoomIn className="absolute inset-0 -z-10">
         <Image src={IMG[hero.image]} alt={hero.imageAlt} fill priority unoptimized sizes="100vw" className="object-cover object-[86%_bottom] xl:object-[72%_bottom]" />
       </ZoomIn>
 
-      <div className="relative mx-auto h-full max-w-none">
+      <div className="relative mx-auto h-full w-full max-w-[1267px] px-4 sm:px-6 xl:w-[calc(1267*var(--u))] xl:px-0">
         {/* Hero text panel */}
-        <div className="absolute inset-x-4 top-[clamp(66px,11vw,110px)] sm:inset-x-6 xl:inset-x-auto xl:left-[calc(42*var(--u))] xl:top-[28%] xl:h-[calc(310*var(--u))] xl:w-[calc(596*var(--u))]">
+        <div className="absolute inset-x-4 top-[clamp(66px,11vw,110px)] sm:inset-x-6 xl:inset-x-auto xl:left-0 xl:top-[28%] xl:h-[calc(310*var(--u))] xl:w-[calc(596*var(--u))]">
           <div className="absolute inset-0 hidden rounded-l-[calc(28*var(--u))] rounded-r-none bg-white/60 backdrop-blur-[2px] xl:block xl:[mask-image:linear-gradient(90deg,#000_70%,transparent_100%)]" />
           <div className="absolute left-0 top-[calc(30*var(--u))] hidden h-[calc(100%-calc(60*var(--u)))] w-[1.5px] bg-[#2f7d1c] xl:block" />
           <div className="absolute bottom-0 left-0 hidden size-[calc(30*var(--u))] rounded-bl-[calc(30*var(--u))] border-b-[1.5px] border-l-[1.5px] border-[#2f7d1c] xl:block" />
