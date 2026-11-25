@@ -1,17 +1,11 @@
 "use client";
 
-<<<<<<< HEAD
 import { useEffect, useRef, useState, type TransitionEvent } from "react";
-=======
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
->>>>>>> aa67bf0c2867b63c1bc475882f1b039d85e58526
 import { HOME, IMG, HEADING_FONT } from "@/data/data";
 import { LeafIcon, QuoteIcon, StarIcon } from "@/lib/icons";
 import { Photo } from "./Photo";
 
 const { items, leftImage, leftImageAlt, rightImage, rightImageAlt } = HOME.testimonials;
-<<<<<<< HEAD
 const slides = items.length > 1 ? [...items, items[0]] : items;
 
 export function TestimonialSlider() {
@@ -72,23 +66,6 @@ export function TestimonialSlider() {
 
   return (
     <div className="relative w-full">
-=======
-
-export function TestimonialSlider() {
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  useEffect(() => {
-    if (paused) return;
-    const timer = setInterval(() => setIndex((i) => (i + 1) % items.length), 5500);
-    return () => clearInterval(timer);
-  }, [paused]);
-
-  const item = items[index];
-
-  return (
-    <div className="relative w-full" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
->>>>>>> aa67bf0c2867b63c1bc475882f1b039d85e58526
       <div className="relative grid items-center gap-6 pb-0 pt-3.5 lg:grid-cols-[259px_1fr_259px] lg:px-3.5 xl:pb-2 xl:pt-[17px] xl:px-[14px]">
         {/* Left image */}
         <div className="relative mx-auto hidden lg:block">
@@ -101,11 +78,7 @@ export function TestimonialSlider() {
           </div>
         </div>
 
-<<<<<<< HEAD
         <div className="relative min-w-0 px-2 text-center">
-=======
-        <div className="relative px-2 text-center">
->>>>>>> aa67bf0c2867b63c1bc475882f1b039d85e58526
           <div className="flex items-center justify-center gap-3 sm:gap-4">
             <span className="h-px w-[48px] bg-[#4f9a28] sm:w-[80px]" />
             <span className="group grid size-[52px] sm:size-[64px] place-items-center rounded-full bg-[#e2f4cc] text-[#17650f] shadow-sm transition-all duration-300 hover:scale-110 hover:bg-[#17650f] hover:text-white xl:size-[78px]">
@@ -114,7 +87,6 @@ export function TestimonialSlider() {
             <span className="h-px w-[48px] bg-[#4f9a28] sm:w-[80px]" />
           </div>
 
-<<<<<<< HEAD
           <div
             className="relative mt-4 overflow-hidden sm:mt-5 xl:mt-[22px]"
             onTouchStart={(e) => {
@@ -187,32 +159,6 @@ export function TestimonialSlider() {
               })}
             </div>
           )}
-=======
-          <div className="relative mt-4 min-h-0 sm:mt-5 xl:mt-[22px] xl:min-h-[240px]">
-            <AnimatePresence mode="wait">
-              <motion.div key={item.name} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -14 }} transition={{ duration: 0.45, ease: "easeOut" }}>
-                <blockquote className="mx-auto max-w-[640px] text-[15px] sm:text-[17.5px] font-medium leading-[1.55] text-[#1c1c1c] xl:text-[21px] xl:leading-[32px]">&ldquo;{item.quote}&rdquo;</blockquote>
-                <div className="mt-4 sm:mt-6 flex items-center justify-center gap-3 sm:gap-4 xl:mt-[24px]">
-                  <span className="hidden h-px w-[80px] bg-[#4f9a28] sm:block" />
-                  <span className="group grid size-[46px] sm:size-[54px] place-items-center rounded-full border-2 border-[#17650f] bg-white text-[#2f8a1e] transition-all duration-300 hover:scale-110 hover:bg-[#17650f] hover:text-white xl:size-[58px]">
-                    <LeafIcon size={32} className="size-7 sm:size-8 transition-transform duration-300 group-hover:scale-110 xl:size-[32px]" />
-                  </span>
-                  <span className="text-left">
-                    <span style={{ fontFamily: HEADING_FONT }} className="block text-[17px] sm:text-[19px] font-bold leading-tight text-[#17650f] xl:text-[21px]">{item.name}</span>
-                    <span className="block text-[14px] sm:text-[15.5px] text-[#2a2a2a] xl:text-[17px]">{item.role}</span>
-                  </span>
-                  <span className="hidden h-px w-[80px] bg-[#4f9a28] sm:block" />
-                </div>
-                <div className="mt-2 sm:mt-3 flex justify-center gap-1 text-[#f5b800]">
-                  {Array.from({ length: 5 }, (_, i) => (
-                    <StarIcon key={i} size={26} className="size-5 sm:size-6 transition-transform duration-200 hover:scale-125 xl:size-[26px]" />
-                  ))}
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
->>>>>>> aa67bf0c2867b63c1bc475882f1b039d85e58526
         </div>
 
         {/* Right image */}

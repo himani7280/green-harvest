@@ -231,11 +231,7 @@ export function GalleryGrid() {
                         alt={activeItem.alt}
                         fill
                         unoptimized
-<<<<<<< HEAD
                         preload
-=======
-                        priority
->>>>>>> aa67bf0c2867b63c1bc475882f1b039d85e58526
                         sizes="(min-width: 768px) 680px, 92vw"
                         className="object-cover"
                       />

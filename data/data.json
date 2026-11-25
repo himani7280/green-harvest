@@ -85,11 +85,7 @@
               "titleDefault": "AgriFarm | Sustainable Farming Solutions",
               "titleTemplate": "%s | AgriFarm",
               "description": "AgriFarm delivers high-quality agricultural solutions through sustainable farming practices, modern technology and a passion for healthy living.",
-<<<<<<< HEAD
               "copyrightPrefix": "Copyright © 2026 AgriFarm.",
-=======
-              "copyrightPrefix": "Copyright © 2026.",
->>>>>>> aa67bf0c2867b63c1bc475882f1b039d85e58526
               "copyrightSuffix": "All rights reserved. Powered by",
               "poweredBy": "Lestow"
             },
