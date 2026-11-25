@@ -4,7 +4,11 @@ import { FaqList } from "@/components/FaqSection";
 import { ContactForm } from "@/components/Forms";
 import { GalleryGrid } from "@/components/GalleryGrid";
 import { HomeHero } from "@/components/HomeHero";
+<<<<<<< HEAD
 import { Counter, ImageReveal, Reveal, Stagger, StaggerItem } from "@/components/Motion";
+=======
+import { Counter, Float, ImageReveal, Reveal, Stagger, StaggerItem } from "@/components/Motion";
+>>>>>>> aa67bf0c2867b63c1bc475882f1b039d85e58526
 import { Photo } from "@/components/Photo";
 import { Eyebrow, SectionHeading } from "@/components/SectionHeading";
 import { TestimonialSlider } from "@/components/TestimonialSlider";

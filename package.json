@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "framer-motion": "^14.5.0",
+<<<<<<< HEAD
     "next": "16.4.6",
+=======
+    "next": "16.4.2",
+>>>>>>> aa67bf0c2867b63c1bc475882f1b039d85e58526
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
@@ -20,7 +24,11 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
+<<<<<<< HEAD
     "eslint-config-next": "16.4.6",
+=======
+    "eslint-config-next": "16.4.2",
+>>>>>>> aa67bf0c2867b63c1bc475882f1b039d85e58526
     "postcss": "^8",
     "sharp": "^0.35.5",
     "tailwindcss": "^4",
