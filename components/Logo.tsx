@@ -25,7 +25,7 @@ export function Logo({ className = "w-[150px] xl:w-[218px]", priority = false, f
         width={290}
         height={75}
         unoptimized
-        priority={priority}
+        preload={priority}
         style={{ filter: "url(#header-agrifarm-logo)" }}
         className={`h-auto ${className}`}
       />

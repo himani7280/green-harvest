@@ -16,7 +16,7 @@ export function Photo({ src, alt, className = "", sizes = "(min-width: 1024px) 5
       alt={alt}
       fill
       unoptimized
-      priority={priority}
+      preload={priority}
       sizes={sizes}
       className={`object-cover transition-transform duration-[1200ms] ease-out ${className}`}
     />

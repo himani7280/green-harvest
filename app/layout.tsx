@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang={layout.htmlLang} suppressHydrationWarning className={layout.htmlClass}>
+    <html lang={layout.htmlLang} data-scroll-behavior="smooth" suppressHydrationWarning className={layout.htmlClass}>
       <head>
         <link rel="preconnect" href={fonts.preconnectHref} />
         <link rel="preconnect" href={fonts.preconnectStaticHref} crossOrigin="anonymous" />

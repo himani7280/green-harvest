@@ -13,7 +13,7 @@ export function HomeHero() {
     <section id="home" style={unit} className="relative isolate h-[clamp(290px,60vw,610px)] xl:h-screen xl:min-h-[640px] xl:max-h-[820px] overflow-hidden bg-[#fed8a8]">
       {/* Hero background */}
       <ZoomIn className="absolute inset-0 -z-10">
-        <Image src={IMG[hero.image]} alt={hero.imageAlt} fill priority unoptimized sizes="100vw" className="object-cover object-[86%_bottom] xl:object-[72%_bottom]" />
+        <Image src={IMG[hero.image]} alt={hero.imageAlt} fill preload unoptimized sizes="100vw" className="object-cover object-[86%_bottom] xl:object-[72%_bottom]" />
       </ZoomIn>
 
       <div className="relative mx-auto h-full w-full max-w-[1267px] px-4 sm:px-6 xl:w-[calc(1267*var(--u))] xl:px-0">

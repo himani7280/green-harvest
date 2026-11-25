@@ -4,7 +4,7 @@ import { FaqList } from "@/components/FaqSection";
 import { ContactForm } from "@/components/Forms";
 import { GalleryGrid } from "@/components/GalleryGrid";
 import { HomeHero } from "@/components/HomeHero";
-import { Counter, Float, ImageReveal, Reveal, Stagger, StaggerItem } from "@/components/Motion";
+import { Counter, ImageReveal, Reveal, Stagger, StaggerItem } from "@/components/Motion";
 import { Photo } from "@/components/Photo";
 import { Eyebrow, SectionHeading } from "@/components/SectionHeading";
 import { TestimonialSlider } from "@/components/TestimonialSlider";

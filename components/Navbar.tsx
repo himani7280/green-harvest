@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { NAVBAR, NAV_CTA, NAV_LINKS } from "@/data/data";
 import { ArrowRightIcon, CloseIcon, MenuIcon, PhoneIcon } from "@/lib/icons";
 import { Logo } from "./Logo";
@@ -10,17 +10,61 @@ const unit = { "--u": "min(1px, calc(100vw / 1351))" } as CSSProperties;
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("#home");
+  const suppressUntilRef = useRef(0);
+
+  const selectHomeForContact = () => {
+    suppressUntilRef.current = Date.now() + 900;
+    setActive(NAVBAR.homeHref);
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => entry.isIntersecting && setActive(`#${entry.target.id}`)),
+      (entries) => {
+        if (Date.now() < suppressUntilRef.current) return;
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          if (entry.target.id === "contact" || entry.target.tagName === "FOOTER") {
+            setActive(NAVBAR.homeHref);
+          } else if (entry.target.id) {
+            setActive(`#${entry.target.id}`);
+          }
+        });
+      },
       { rootMargin: "-45% 0px -50% 0px" },
     );
+
+    const observed = new Set<Element>();
     NAV_LINKS.forEach((link) => {
       const el = document.getElementById(link.href.slice(1));
-      if (el) observer.observe(el);
+      if (el && !observed.has(el)) {
+        observed.add(el);
+        observer.observe(el);
+      }
     });
-    return () => observer.disconnect();
+
+    const contactEl = document.getElementById(NAV_CTA.href.slice(1));
+    if (contactEl && !observed.has(contactEl)) {
+      observed.add(contactEl);
+      observer.observe(contactEl);
+    }
+
+    const footerEl = document.querySelector("footer");
+    if (footerEl && !observed.has(footerEl)) {
+      observed.add(footerEl);
+      observer.observe(footerEl);
+    }
+
+    const onHashChange = () => {
+      if (window.location.hash === NAV_CTA.href) {
+        selectHomeForContact();
+      }
+    };
+    window.addEventListener("hashchange", onHashChange);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("hashchange", onHashChange);
+    };
   }, []);
 
   return (
@@ -47,7 +91,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href={NAV_CTA.href} className="group hidden h-[40px] items-center gap-2 whitespace-nowrap rounded-full bg-[#0d5a10] px-5 text-[14px] xl:h-[calc(40*var(--u))] xl:gap-[calc(8*var(--u))] xl:px-[calc(20*var(--u))] xl:text-[length:calc(14*var(--u))] font-bold text-white transition hover:bg-[#09440c] hover:shadow-lg sm:inline-flex">
+            <a href={NAV_CTA.href} onClick={selectHomeForContact} className="group hidden h-[40px] items-center gap-2 whitespace-nowrap rounded-full bg-[#0d5a10] px-5 text-[14px] xl:h-[calc(40*var(--u))] xl:gap-[calc(8*var(--u))] xl:px-[calc(20*var(--u))] xl:text-[length:calc(14*var(--u))] font-bold text-white transition hover:bg-[#09440c] hover:shadow-lg sm:inline-flex">
               <PhoneIcon size={18} fill="currentColor" strokeWidth={1} className="transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12" />
               {NAV_CTA.label}
               <ArrowRightIcon size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -80,7 +124,14 @@ export function Navbar() {
                 </li>
               ))}
               <li className="mt-2 pt-2 border-t border-[#17650f]/10">
-                <a href={NAV_CTA.href} onClick={() => setOpen(false)} className="group inline-flex h-9 w-full items-center justify-center gap-2 rounded-full bg-[#0d5a10] text-[14px] font-bold text-white transition hover:bg-[#09440c]">
+                <a
+                  href={NAV_CTA.href}
+                  onClick={() => {
+                    setOpen(false);
+                    selectHomeForContact();
+                  }}
+                  className="group inline-flex h-9 w-full items-center justify-center gap-2 rounded-full bg-[#0d5a10] text-[14px] font-bold text-white transition hover:bg-[#09440c]"
+                >
                   <PhoneIcon size={16} fill="currentColor" strokeWidth={1} className="transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-12" />
                   {NAV_CTA.label}
                 </a>

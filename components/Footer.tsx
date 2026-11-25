@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BRAND, FOOTER, HOME, IMG, SITE, HEADING_FONT } from "@/data/data";
+import { BRAND, FOOTER, IMG, SITE, HEADING_FONT } from "@/data/data";
 import { ChevronRightIcon, ChevronUpIcon, FacebookIcon, InstagramIcon, LinkedinIcon, NamedIcon, YoutubeIcon } from "@/lib/icons";
 import { Logo } from "./Logo";
 
